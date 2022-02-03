@@ -1,6 +1,7 @@
 <section class="cart-show">
 
   <header class="page-header">
+    <% if cart_subtotal_cents > 0 %>
     <h1>My Cart</h1>
   </header>
 
@@ -47,6 +48,12 @@
         </script>
       <% end %>
     </div>
-  </div>
 
+      <% else %>
+        <div class="alert">
+          <span>Your Cart is empty! Click <%= link_to 'HERE', :root %> to continue shopping.</span>
+        </div>
+      <% end %>
+
+  </div>
 </section>
